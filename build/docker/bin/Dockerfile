@@ -36,9 +36,12 @@ RUN strip /opt/rocksdb/ldb /opt/rocksdb/sst_dump && \
 RUN go get github.com/golang/dep/cmd/dep
 RUN go get github.com/gobuffalo/packr/...
 
-RUN echo "deb http://ftp.debian.org/debian sid main" >>/etc/apt/sources.list
-RUN apt-get update
-RUN apt-get -y install libzmq3-dev
+RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak && \
+    echo "deb http://ftp.debian.org/debian sid main" >>/etc/apt/sources.list && \
+    apt-get update && \
+    apt-get -y install libzmq3-dev && \
+    rm /etc/apt/sources.list && \
+    mv /etc/apt/sources.list.bak /etc/apt/sources.list 
 
 # download pre-loaded depencencies
 RUN \
