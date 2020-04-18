@@ -36,6 +36,8 @@ RUN strip /opt/rocksdb/ldb /opt/rocksdb/sst_dump && \
 RUN go get github.com/golang/dep/cmd/dep
 RUN go get github.com/gobuffalo/packr/...
 
+RUN apt-get install libzmq3-dev
+
 # download pre-loaded depencencies
 RUN \
     cleanup() { rm -rf $GOPATH/src/blockbook; } && \
