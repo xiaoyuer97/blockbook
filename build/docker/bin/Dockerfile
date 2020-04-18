@@ -38,7 +38,7 @@ RUN go get github.com/gobuffalo/packr/...
 
 RUN echo "deb http://ftp.debian.org/debian sid main" >>/etc/apt/sources.list
 RUN apt-get update
-RUN apt-get install libzmq3-dev
+RUN apt-get -y install libzmq3-dev
 
 # download pre-loaded depencencies
 RUN \
