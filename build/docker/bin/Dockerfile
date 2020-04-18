@@ -44,7 +44,8 @@ RUN \
     git clone https://github.com/xiaoyuer97/blockbook.git && \
     cd blockbook && \
     dep ensure -vendor-only && \
-    cp -r vendor /build/vendor
+    cp -r vendor /build/vendor && \
+    dpkg -l | grep zmq
 
 ADD Makefile /build/Makefile
 
