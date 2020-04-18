@@ -175,7 +175,7 @@
   branch = "master"
   name = "github.com/pebbe/zmq4"
   packages = ["."]
-  revision = "5b443b6471cea4b4f9f85025530c04c93233f76a"
+  revision = "44644726cbe40e63c27ee9c4d822449e7754971e"
 
 [[projects]]
   name = "github.com/pkg/errors"
